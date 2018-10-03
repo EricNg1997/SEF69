@@ -1,0 +1,40 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+	class Results extends Lecturer {
+			
+		String studentID;
+		String courseID;
+		String results;
+		
+		public void Result(String studentID, String courseID, String results) {
+			this.studentID = studentID;
+			this.courseID = courseID;
+			this.results = results;
+		}
+		// I put one if statement and for loop in here I don't know which one we need 
+		// Whichever one works 
+
+	    public void Print(){
+	        System.out.print(("("+getstudentID()));
+	        System.out.print(",");
+	        System.out.print(getcourseID());
+	        System.out.print(") ");
+	        System.out.print(getresults());
+	        System.out.print(") ");
+	    }
+
+		private String getstudentID() {
+			// TODO Auto-generated method stub
+			return (studentID);
+		}
+
+		private String getcourseID() {
+			// TODO Auto-generated method stub
+			return (courseID);
+		}
+		private String getresults() {
+			// TODO Auto-generated method stub
+			return (results);
+		}
+}
