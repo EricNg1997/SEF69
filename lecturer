@@ -1,4 +1,7 @@
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import javax.naming.spi.DirStateFactory.Result;
 
 class Lecturer implements User {
 	
@@ -48,11 +51,43 @@ class Lecturer implements User {
 		
 		Scanner s = new Scanner(System.in);
 		System.out.println("Enter an Option:");
-		String result = s.nextLine();
+		int result = s.nextInt();
 		System.out.println("-----------------------------");
 		System.out.println("lecturer menu option = "+ result);		
-	}
-	}
+	
+	
+if (result == 1) {
+	System.out.println("result input");
+	viewResults();
+}
+}
+
+public void viewResults() {
+Scanner x = new Scanner(System.in);
+System.out.println("Student ID");
+String studentID = x.nextLine();
+System.out.println("Course Code");
+String courseID = x.nextLine();
+System.out.println("Result");
+String results = x.nextLine();
+
+
+Result r = new Result(studentID, courseID, results);
+
+// do it like this...
+Campus s = Campus.getInstance();
+
+ArrayList<Result> results = s.getResults();
+
+results.add(r);
+printResultArray(results);
+}
+private void printResultArray(ArrayList<Result> results) {
+for (int i = 0; i < results.size(); ++i) {
+    results.get(i).Print();
+}
+}
+}
 	/*public void respondToMenuOption(int option) {
 		System.out.println("lecturer menu " + option);
 
